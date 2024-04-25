@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xat Websocket</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="notification hidden">
+    <p></p>
+  </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-quarter mt-6">
+        <div class="card  has-background-black">
+          <div class="card-content">
+            <div class="media mb-0">
+              <div class="media-content">
+                <p class="title is-6 has-text-white">Usuaris conectats</p>
+                <hr>
+              </div>
+            </div>
+            <div class="content has-text-white" id="userConnected">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="tabs is-boxed pt-6 mb-0">
+          <ul>
+            <li id="tabGeneral" data-content="chatGeneral">
+              <a class="active">
+                <span class="has-text-white">General</span>
+                <i class="fas fa-comment newMessage hide"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="columns">
+          <div class="column containerChats pb-0">
+            <div id="chatGeneral" class="chat textarea contentTab"></div>
+            <div class="infoInput"></div>
+          </div>
+        </div>
+        <div class="columns is-mobile">
+          <div class="column is-one-quarter pr-0 pt-1">
+            <input class="input has-text-white has-background-black" type="text" id="user" placeholder="Usuari">
+          </div>
+          <div class="column ml-1 mt-1 mr-3">
+            <div class="columns is-mobile">
+              <input class="input has-text-white has-background-black" type="text" id="message" placeholder="Missatge" title="Subir fichero">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
